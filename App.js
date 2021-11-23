@@ -11,7 +11,7 @@ import ViewTodos from "./Components/ViewTodos/ViewTodos";
 const Stack = createNativeStackNavigator();
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(["hello"]);
   return (
     <NavigationContainer>
       <Stack.Navigator>

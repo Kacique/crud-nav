@@ -3,28 +3,26 @@ import { StyleSheet, Pressable, Text, View, FlatList } from "react-native";
 import styles from "./Styles.js";
 import stylesTask from "../Task/TaskStyles";
 
-// Custom Components
-import Task from "../Task/Task.js";
-
 const deleteTask = (index) => {
   let newTodo = [...props.todos];
   newTodo.splice(index, 1);
   props.setTodo(newTodo);
 };
 
-const renderItem = ({ task }) => {
-  return (
-    <Pressable
-      style={stylesTask.todoContent}
-      onPress={() => props.navigation.navigate("Edit")}
-      onLongPress={() => alert("Delete")}
-    >
-      <Text style={stylesTask.text}>{task}</Text>
-      {console.log(props.task)}
-    </Pressable>
-  );
-};
 const ViewTodos = (props) => {
+  const renderItem = ({ task }) => {
+    return (
+      <Pressable
+        style={stylesTask.todoContent}
+        onPress={() => props.navigation.navigate("Edit")}
+        onLongPress={() => alert("Delete")}
+      >
+        <Text style={stylesTask.text}>{task}</Text>
+        {console.log(task)}
+      </Pressable>
+    );
+  };
+
   return (
     <View
       style={{
